@@ -83,8 +83,6 @@ def update_graph(csv_name, column_name, operation):
             df = df.diff()
         if operation == 'get difference (period=2)':
             df = df.diff(2)
-        print('df')
-        print(df)
         if column_name == 'all':
             for i in df.columns:
                 trace.append(
@@ -97,7 +95,8 @@ def update_graph(csv_name, column_name, operation):
                             'size': 8,
                             # 'opacity': 0.5,
                             'line': {'width': 0.5, 'color': 'blue'}
-                        }
+                        },
+                        name=i
                     )
                 )
         else:
